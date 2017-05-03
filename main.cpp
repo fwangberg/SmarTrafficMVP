@@ -3,7 +3,7 @@
 #include "ObserverPattern.hpp"
 
 // The LightData is a model that represents whether a light is signaling to "go" or not
-class LightData
+class LightData: public Observable
 {
 private:
   bool go;
@@ -48,7 +48,7 @@ public:
 
 //The controller delegates both north-south and east-west pairs of signals
 //and binds the sensor's actions to updating the views
-class IntersectionController
+class IntersectionController: public IObserver
 {
 private:
   LightData northSouth;
